@@ -13,8 +13,8 @@
  */
 class contabanco {
     //put your code here
-    private $numConta;
-    private $tipo;
+    public $numConta;
+    protected $tipo;
     private $dono;
     private $saldo;
     private $status;
