@@ -61,76 +61,83 @@ class contabanco {
     }
 
     public function __construct(){
-        setSaldo(0);
-        setStatus(false);
+        $this->setSaldo(0);
+        $this->setStatus(false);
+        //echo "<p><b>"."OK! Conta criada com sucesso!"."</b></p>";
     }
             
     public function abrirConta($t){
-        setTipo(t);
-        setStatus(true);
-        if(getTipo == 'CC'){
-            setSaldo(50);
-        }elseif (getTipo == 'CP') {
-            setSaldo(150);
+        $this->setTipo($t);
+        $this->setStatus(true);
+        if($this->getTipo() == 'CC'){
+            $this->setSaldo(50);
+        }elseif ($this->getTipo() == 'CP') {
+            $this->setSaldo(150);
         }
+        echo "<p><b>"."OK! Conta criada com sucesso!"."</b></p>";
         return;
         
     }
     
     public function fecharConta(){
-        if(getSaldo > 0 ){
+        if($this->getSaldo() > 0 ){
             $msg = "Conta com dinheiro";
-        }elseif(getSaldo<0){
+        }elseif($this->getSaldo()<0){
             $msg = "Conta em debito";
         }else{
-            setStatus(false);
+            $this->setStatus(false);
+            $msg = "Conta de ".$this->getDono() ." fechada.";
         }
+        echo "<p><b>". $msg. "</b></p>";
         return $msg;
         
     }
     
     public function depositar($v){
-        if(getStatus == true){
-            setSaldo(getSaldo + $v);
-            $msg = getSaldo;
+        if($this->getStatus() == true){
+            $this->setSaldo($this->getSaldo() + $v);
+            $msg = "Deposito de $v na conta de ".$this->getDono();
         }else{
             $msg = "Impossivel depositar";
         }
+        echo "<p><b>". $msg. "</b></p>";
         return $msg;
         
     }
     
     public function sacar($v){
-        if(getStatus == true){
-            if(getSatldo > $v){
-                setSaldo(getSaldo - $v);
+        if($this->getStatus() == true){
+            if($this->getSaldo()>=$v){
+                $this->setSaldo($this->getSaldo() - $v);
+                $msg = "Saque de ".$v." na conta de ". $this->getDono();
             }else{
                 $msg = "Saldo insuficiente";
             }
         }else{
             $msg = "Impossivel sacar";
         }
+        echo "<p><b>". $msg. "</b></p>";
         return $msg;
     }
     
     public function pagarMensal(){
         
-        if(getTipo == "CC"){
+        if($this->getTipo() == "CC"){
             $v = 12;
-        }elseif (getTipo == "CP"){
+        }elseif ($this->getTipo() == "CP"){
             $v = 20;
         }
-        if (getStatus == true){
-            if(getSaldo > $v){
-                setSaldo(getSaldo - $v);
-                $msg = getSaldo;
+        if ($this->getStatus() == true){
+            if($this->getSaldo() > $v){
+                $this->setSaldo($this->getSaldo() - $v);
+                $msg = "Desconto de Mensalidade ".$v." na conta de ".$this->getDono();
             }else {
                 $msg = "Saldo insuficiente";
             }
         }else{
             $msg = "Impossivel pagar";
         }
-        
+        echo "<p><b>". $msg. "</b></p>";
         return $msg;
     }
 }
