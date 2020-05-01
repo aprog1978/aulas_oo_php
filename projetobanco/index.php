@@ -7,7 +7,7 @@ and open the template in the editor.
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>caneta4</title>
+        <title>Projeto Banco</title>
         <?php 
         error_reporting(E_ALL);
         ini_set('display_errors', TRUE);
