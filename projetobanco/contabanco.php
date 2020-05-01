@@ -13,12 +13,16 @@
  */
 class contabanco {
     //put your code here
+    
+    ///atributos
     public $numConta;
     protected $tipo;
     private $dono;
     private $saldo;
     private $status;
     private $msg;
+    
+    ///metodos
     
     function getNumConta() {
         return $this->numConta;
