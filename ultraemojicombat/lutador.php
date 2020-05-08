@@ -131,7 +131,7 @@ class lutador {
     }
     
     function apresentar(){
-        echo '<p>------------------------------------------------------</p>';
+        echo '<hr />';
         echo '<p> Chegou a hora! O lutador ' . $this->getNome();
         echo ' veio diretamente de ' . $this->getNacionalidade();
         echo ' tem ' . $this->getIdade() ;
@@ -142,7 +142,7 @@ class lutador {
     }
     
     function status(){
-        echo '<p>---------------</p>';
+        echo '<hr />';
         echo '<p>';
         echo '' . $this->getNome();
         echo ' e peso '. $this->getCategoria();

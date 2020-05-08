@@ -19,7 +19,9 @@ and open the template in the editor.
         <?php
         // put your code here
         require_once './lutador.php';
+        require_once './luta.php';
         $l = array();
+        // nome, local, idade, altura, peso, vitorias, derotas, empates
         $l[0] = new lutador('Pretty boy', 'França', 30, 1.75, 68.9, 11, 2, 1);
         $l[1] = new lutador('Putscript', "Brasil", 29, 1.68, 57.8, 14, 2, 3);
         $l[2] = new lutador('SnapShadow', 'EUA', 35, 1.65, 80.9, 12, 2, 1);
@@ -27,7 +29,7 @@ and open the template in the editor.
         $l[4]=new lutador('UFOCobol', 'Brasil', 37, 1.70, 119.3, 5, 4, 3);
         $l[5]= new lutador('Nerdart', "EUA", 30, 1.81, 105.7, 12, 2, 4);
         
-        $l[3]->apresentar();
+        /*$l[3]->apresentar();
         $l[3]->status();
         
         $l[3]->perderLuta();
@@ -51,7 +53,18 @@ and open the template in the editor.
         //$l[4]->status();
         
         $l[5]->apresentar();
-        //$l[5]->status();
+        $l[5]->status();*/
+        
+        $lut1 = $l[4];
+        $lut2 = $l[5];
+        
+        $UEC01 = new luta();
+        $UEC01->marcarLuta($lut1,$lut2);
+        $UEC01->lutar();
+        
+        $lut1->status();
+        $lut2->status();
+        
         ?>
         </pre>
     </body>
