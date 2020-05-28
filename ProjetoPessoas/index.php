@@ -24,17 +24,17 @@ and open the template in the editor.
         require_once './Professor.php';
         require_once './Funcionario.php';
         
-        $p1 = new Pessoa();
+        //$p1 = new Pessoa();
         $p2= new Aluno();
         $p3=new Professor();
         $p4=new Funcionario();
         
-        $p1->setNome("Pedro");
+        //$p1->setNome("Pedro");
         $p2->setNome("Maria");
         $p3->setNome("Claudio");
         $p4->setNome("Faniana");
         
-        $p1->setSexo("M");
+        //$p1->setSexo("M");
         $p4->setSexo("F");
         
         $p2->setCurso("Informatica");
@@ -43,10 +43,10 @@ and open the template in the editor.
         
         $p3->receberAumento(550.20);
         $p4->mudarTrabalho();
-        $p2->cancelarMatricula();
+        $p2->cancelarMatriculan();
                 
         echo '<br>';
-        print_r($p1);
+        //print_r($p1);
         echo '<hr>';
         print_r($p2);
         echo '<hr>';

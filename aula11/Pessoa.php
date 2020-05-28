@@ -13,39 +13,35 @@
  */
 abstract class Pessoa {
     //put your code here
+    protected $nome, $idade, $sexo;
     
-    private $nome;
-    private $idade;
-    private $sexo;
-    
-    public function fazerAniversario(){
+    public final function fazerAniversario(){
         $this->idade++;
     }
     
-    public function getNome() {
+    function getNome() {
         return $this->nome;
     }
 
-    public function getIdade() {
+    function getIdade() {
         return $this->idade;
     }
 
-    public function getSexo() {
+    function getSexo() {
         return $this->sexo;
     }
 
-    public function setNome($nome) {
+    function setNome($nome) {
         $this->nome = $nome;
     }
 
-    public function setIdade($idade) {
+    function setIdade($idade) {
         $this->idade = $idade;
     }
 
-    public function setSexo($sexo) {
+    function setSexo($sexo) {
         $this->sexo = $sexo;
     }
-
 
 
 }
