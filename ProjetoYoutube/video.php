@@ -23,6 +23,7 @@ class video implements acoesVideo {
         $this->curtidas = 0;
         $this->reproduzindo= false;
         
+        
     }
 
     
@@ -51,7 +52,9 @@ class video implements acoesVideo {
     }
 
     function setAvaliacao($avaliacao) {
-        $this->avaliacao = $avaliacao;
+        $media = 0;
+        $media = ($this->avaliacao + $avaliacao)/$this->views;
+        $this->avaliacao = $media;
     }
 
     function setViews($views) {
